@@ -1,3 +1,9 @@
+---
+services: app-service, MySQL
+platforms: java
+author: selvasingh
+---
+
 # End-to-end Java Experience in App Service Linux 
 
 This guide walks you through the process of building, 
