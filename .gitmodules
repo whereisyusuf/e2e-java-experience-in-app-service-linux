@@ -1,0 +1,9 @@
+[submodule "initial-hsqldb/spring-framework-petclinic"]
+	path = initial-hsqldb/spring-framework-petclinic
+	url = https://github.com/spring-petclinic/spring-framework-petclinic.git
+[submodule "initial-mysql/spring-framework-petclinic"]
+	path = initial-mysql/spring-framework-petclinic
+	url = https://github.com/spring-petclinic/spring-framework-petclinic.git
+[submodule "complete/spring-framework-petclinic"]
+	path = complete/spring-framework-petclinic
+	url = https://github.com/spring-petclinic/spring-framework-petclinic.git
