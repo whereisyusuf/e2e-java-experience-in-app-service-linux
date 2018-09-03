@@ -41,7 +41,7 @@ you can bypass basic setup steps that you are already
 familiar with. Either way, you will end up with working code.
 
 When you are finished, you can check your results 
-against the code in 
+against YOUR code in 
 [e2e-java-experience-in-app-service-linux/complete](https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux/tree/master/complete).
 
 You can start from [e2e-java-experience-in-app-service-linux/initial-hsqldb](https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux/tree/master/initial-hsqldb).
@@ -259,7 +259,7 @@ open https://petclinic-hsqldb.azurewebsites.net
 ![](./media/petclinic-on-tomcat-in-app-service-linux.jpg)
 
 When you are finished, you can check your results 
-against the code in 
+against YOUR code in 
 [e2e-java-experience-in-app-service-linux/initial-mysql](https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux/tree/master/initial-mysql).
 
 ## Build and Deploy Pet Clinic Powered Using Azure Database for MySQL
@@ -563,7 +563,7 @@ open https://petclinic-mysql.azurewebsites.net
 ![](./media/petclinic-on-tomcat-in-app-service-linux-with-data-from-mysql.jpg)
 
 When you are finished, you can check your results 
-against the code in 
+against YOUR code in 
 [e2e-java-experience-in-app-service-linux/complete](https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux/tree/master/complete).
 
 
