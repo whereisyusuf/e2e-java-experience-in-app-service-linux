@@ -207,6 +207,7 @@ Pet Clinic to Tomcat in App Service Linux:
     
             <!-- Web App information -->
             <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+            <appServicePlanName>${WEBAPP_PLAN_NAME}</appServicePlanName>
             <appName>${WEBAPP_NAME}</appName>
             <region>${REGION}</region>
     
@@ -236,7 +237,7 @@ bash-3.2$ mvn azure-webapp:deploy
 [INFO] --- azure-webapp-maven-plugin:1.4.0:deploy (default-cli) @ spring-petclinic ---
 [INFO] Authenticate with Azure CLI 2.0
 [INFO] Target Web App doesn't exist. Creating a new one...
-[INFO] Creating App Service Plan 'ServicePlan4c1fb587-da62-4895'...
+[INFO] Creating App Service Plan 'petclinic-hsqldb-appservice-plan'...
 [INFO] Successfully created App Service Plan.
 [INFO] Successfully created Web App.
 [INFO] Trying to deploy artifact to petclinic-hsqldb...
@@ -406,6 +407,7 @@ POM.xml to bind secrets at runtime:
 
         <!-- Web App information -->
         <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+        <appServicePlanName>${WEBAPP_PLAN_NAME}</appServicePlanName>
         <appName>${WEBAPP_NAME}</appName>
         <region>${REGION}</region>
 
@@ -509,7 +511,7 @@ bash-3.2$ mvn azure-webapp:deploy
 [INFO] --- azure-webapp-maven-plugin:1.4.0:deploy (default-cli) @ spring-petclinic ---
 [INFO] Authenticate with Azure CLI 2.0
 [INFO] Target Web App doesn't exist. Creating a new one...
-[INFO] Creating App Service Plan 'ServicePlan06a0b216-4233-4aea'...
+[INFO] Creating App Service Plan 'petclinic-mysql-appservice-plan'...
 [INFO] Successfully created App Service Plan.
 [INFO] Successfully created Web App.
 [INFO] Trying to deploy artifact to petclinic-mysql...
@@ -566,10 +568,19 @@ When you are finished, you can check your results
 against YOUR code in 
 [e2e-java-experience-in-app-service-linux/complete](https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux/tree/master/complete).
 
+## Scale out the Pet Clinic App
+
+Scale out Java Web app using Azure CLI:
+
+```bash
+az appservice plan update --number-of-workers 2 \
+   --name ${WEBAPP_PLAN_NAME} \
+   --resource-group ${RESOURCEGROUP_NAME}
+```
 
 ## Congratulations!
 
-Congratulations!! You built a Java Web app using Spring Framework, 
+Congratulations!! You built and scaled out a Java Web app using Spring Framework, 
 JSP, Spring Data, Hibernate, JDBC, App Service Linux and
 Azure Database for MySQL.
 

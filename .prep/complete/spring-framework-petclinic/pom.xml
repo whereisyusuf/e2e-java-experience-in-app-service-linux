@@ -468,6 +468,7 @@
 
                     <!-- Web App information -->
                     <resourceGroup>${RESOURCEGROUP_NAME}</resourceGroup>
+                    <appServicePlanName>${WEBAPP_PLAN_NAME}</appServicePlanName>
                     <appName>${WEBAPP_NAME}</appName>
                     <region>${REGION}</region>
 
