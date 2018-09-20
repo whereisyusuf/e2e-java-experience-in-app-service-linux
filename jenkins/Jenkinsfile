@@ -1,0 +1,30 @@
+node {
+  stage('init') {
+    checkout([$class: 'GitSCM',
+          branches: [[name: '*/master']],
+          doGenerateSubmoduleConfigurations: false,
+          extensions: [[$class: 'SubmoduleOption',
+                        disableSubmodules: false,
+                        parentCredentials: false,
+                        recursiveSubmodules: true,
+                        reference: '',
+                        trackingSubmodules: false]],
+          submoduleCfg: [],
+          userRemoteConfigs: [[url: 'https://github.com/Azure-Samples/e2e-java-experience-in-app-service-linux']]])
+  }
+
+  stage('build') {
+    sh '''
+        yes | cp -rf .prep/* .
+	cd complete/spring-framework-petclinic
+	mvn clean package
+        mv target/*.war ROOT.war
+    '''
+  }
+
+  stage('deploy') {
+    azureWebAppPublish azureCredentialsId: env.AZURE_CRED_ID,
+                       resourceGroup: env.RES_GROUP, appName: env.WEB_APP, filePath: "complete/spring-framework-petclinic/ROOT.war",
+                       targetDirectory: "webapps"
+  }
+}
