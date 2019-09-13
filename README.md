@@ -1,7 +1,11 @@
 ---
-services: app-service, MySQL
-platforms: java
-author: selvasingh
+page_type: sample
+languages:
+- 
+products:
+- azure
+description: "This guide walks you through the process of building,"
+urlFragment: e2e-java-experience-in-app-service-linux
 ---
 
 # End-to-end Java Experience in App Service Linux 
